@@ -1,0 +1,28 @@
+body {
+    .pokemon-list {
+       .page-list {
+          position: absolute;
+          bottom: 50px;
+          width: 100%;
+          ul.pagination {
+            cursor: pointer;
+            width: 30%;
+            display: flex;
+            margin: auto;
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+            .selected {
+              color: $green;
+            }
+            li {
+              padding: 0 6px;
+            }
+            @media (max-width: 1024px) {
+              width: 80%;
+            }
+          }
+      }
+    }
+  }
+  

@@ -1,0 +1,13 @@
+// modules 
+@import './modules/colors';
+@import './modules/typography';
+
+//components 
+@import './components/pokemonCard';
+@import './components/pagination';
+@import './components/header';
+@import './components/pokemonPage';
+body {
+    // background-color: black;
+    font-family: $roboto;
+}

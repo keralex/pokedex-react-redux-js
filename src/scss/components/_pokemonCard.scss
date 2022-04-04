@@ -1,0 +1,135 @@
+body {
+  .pokemon-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    padding-bottom: 200px;
+    padding-top: 50px;
+    position: relative;
+    .select-pokemon-amount {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      span {
+        margin: 0 1rem;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        left: 0;
+      }
+    }
+    .pokemon-card-container {
+      width: 20%;
+      padding: 15px;
+      @media (max-width: 1024px) {
+        width: 25%;
+        min-width: 150px;
+      }
+      @media (max-width: 600px) {
+        width: 40%;
+        min-width: 150px;
+      }
+      .pokemon-card-wrapper {
+        
+          box-shadow: -9px 9px 31px -19px rgba(0, 0, 0, 0.69);
+          background-color: #fff;
+          border-radius: 3px;
+          width: 100%;
+          height: 100%;
+          transition: transform 0.3s ease-out;
+          .pokemon-card-link {
+            padding: 12px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-decoration: none;
+          .card-image {
+            width: 100%;
+            height: auto;
+            background-image: url('https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/e7cb1a05e60dd2e.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            img {
+              width: 100%;
+              position: relative;
+            }
+            .card-image-front {
+              z-index: 0;
+            }
+            .card-image-front,
+            .card-image-back {
+              left: 0;
+              width: 50%;
+              transition: 0.5s;
+              position: relative;
+            }
+            .card-image-back {
+              //   display: none;
+              z-index: 1;
+              position: absolute;
+              left: 25%;
+              opacity: 0;
+            }
+          }
+          .card-info {
+            .card-info-order {
+              text-align: center;
+              color: $gray;
+              opacity: 0.7;
+              font-size: 12px;
+            }
+            .card-info-title {
+              text-align: center;
+              text-transform: capitalize;
+              color: $gray;
+              @media (max-width: 600px) {
+                font-size: 1rem;
+              }
+            }
+            .card-info-types {
+                display: flex;
+                justify-content: center;
+              p {
+                width: fit-content;
+                padding: 12px;
+                // background-color: $colorPrimary;
+                color: white;
+                margin: 0 10px;
+                border-radius: 10%;
+                text-transform: capitalize;
+                @media (max-width: 600px) {
+                  font-size: 12px;
+                  margin: 0 5px;
+
+                }
+              }
+            }
+          }
+          &:hover {
+            .card-image-back {
+              opacity: 1;
+              display: block;
+            }
+          }
+        }
+
+        &:hover {
+          transform: translate(0, -5px);
+        }
+      }
+    }
+    .page-list {
+        position: absolute;
+        bottom: 0;
+    }
+  }
+}

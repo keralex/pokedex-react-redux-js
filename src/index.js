@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import Store from './store';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import PokemonList from './containers/pokemonList';
+import PokemonPage from './containers/pokemonPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HashRouter>
+      <Provider store={Store}>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<PokemonList />} />
+            <Route path="pokemon" element={<PokemonPage />}>
+              <Route path=":pokemonID" element={<PokemonPage />} />
+            </Route>
+          </Route>
+        </Routes>
+      </Provider>
+    </HashRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
