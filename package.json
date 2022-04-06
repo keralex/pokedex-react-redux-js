@@ -61,5 +61,10 @@
     "prettier": "^2.6.1",
     "redux-devtools": "^3.7.0",
     "sass": "^1.49.10"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|react-native-cookies)/)"
+    ]
   }
 }
